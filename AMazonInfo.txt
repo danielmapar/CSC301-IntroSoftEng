@@ -1,0 +1,7 @@
+IP: 54.172.215.131
+DNS: ec2-54-172-215-131.compute-1.amazonaws.com
+Username: ubuntu
+
+SSH key is in repo
+
+Command: ssh -i {path to key}/CSC301ChatApp.pem ubuntu@54.172.215.131

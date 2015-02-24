@@ -1,0 +1,295 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Edit Profile</title>
+  {% include 'chatapp/partials/header.html' %}
+  <link rel="stylesheet" href="{% static 'chatapp/Account.css' %}" type="text/css">
+  <script src="{% static 'chatapp/Account.js' %}"></script>
+</head>
+
+<body>
+
+  {% include 'chatapp/partials/nav.html' %}
+  <div class="container">
+    <div class="tabbable">
+
+      <div class="row">
+        <ul class="col-md-offset-3 nav nav-pills">
+          {% if anchor == 'true' %}
+          <li role="presentation"><a href="#a" data-toggle="tab">Edit Profile</a></li>
+          <li role="presentation" class="active"><a href="#b" data-toggle="tab">Edit Account</a></li>
+          {% else %}
+          <li role="presentation" class="active"><a href="#a" data-toggle="tab">Edit Profile</a></li>
+          <li role="presentation"><a href="#b" data-toggle="tab">Edit Account</a></li>
+          {% endif %}
+          <li role="presentation"><a href="#c" data-toggle="tab">Profile Pic</a></li>
+        </ul>
+      </div>
+      <br>
+
+      <div class="tab-content">
+
+
+      {% if anchor == 'true' %}
+        <div class="tab-pane" id="a">
+      {% else %}
+        <div class="tab-pane active" id="a">
+       {% endif %}
+          <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+              <form action="{% url 'edit_profile' %}" method="post" class="form-horizontal" role="form">
+                {% csrf_token %}
+                {%  if edit_profile.success %}
+                <div id="loginalert"  class="alert alert-success">
+                  <p>Success: {{ edit_profile.success }}</p>
+                  <span></span>
+                </div>
+                {% endif %}
+                <fieldset>
+
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label" for="textinput">First Name</label>
+                    <div class="col-sm-6">
+                      <input type="text" name="first_name" placeholder="First Name" value="{{ user.first_name }}" class="form-control">
+                    </div>
+                  </div>
+
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label" for="textinput">Last Name</label>
+                    <div class="col-sm-6">
+                      <input type="text" name="last_name" placeholder="Last Name" value="{{ user.last_name }}" class="form-control">
+                    </div>
+                  </div>
+
+
+                  <div id="errmsg"></div>
+                  <!-- Text input-->
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label" for="textinput">Age</label>
+                    <div class="col-sm-6">
+                      {%  if user.user_profile.age %}
+                        <input type="text" name="age" placeholder="" value="{{ user.user_profile.age }}" class="form-control">
+                      {% else %}
+                        <input type="text" name="age" placeholder="" value="18" class="form-control">
+                      {% endif %}
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label" for="sel1">Gender</label>
+                    <div class="col-sm-6">
+                      <select name="gender" class="form-control" id="sel1">
+                        <option>{{ user.user_profile.gender }}</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label" for="sel2">Program of Study</label>
+                    <div class="col-sm-6">
+                      <select name="program" class="form-control" id="sel2">
+                        <option>{{ user.user_profile.program }}</option>
+                        <option>Computer Science</option>
+                        <option>Rotman Commerce</option>
+                        <option>Arts and Science</option>
+                        <option>Engineering</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label" for="sel3">Degree of Study</label>
+                    <div class="col-sm-6">
+                      <select name="degree" class="form-control" id="sel3">
+                        <option>{{ user.user_profile.degree }}</option>
+                        <option>Undergraduate</option>
+                        <option>Masters</option>
+                        <option>Post-doctorate</option>
+                        <option>Alumnus/Alumna</option>
+                        <option>Professor</option>
+                        <option>TA</option>
+                      </select>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label" for="sel4">Year of Study</label>
+                    <div class="col-sm-6">
+                      <select name="year_of_study" class="form-control" id="sel4">
+                        <option>{{ user.user_profile.year_of_study }}</option>
+                        <option>First Year</option>
+                        <option>Second Year</option>
+                        <option>Third Year</option>
+                        <option>Fourth Year</option>
+                        <option>N/A</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- <div class="form-group"> -->
+                  <label class="col-sm-4 control-label" for="textinput">
+                    Interests
+                  </label>
+                  <div class="interests-input col-sm-8">
+                    <label class="checkbox-inline">
+                      <input type="checkbox" name="video_games"
+                      {% if user.user_profile.video_games %}
+                      checked
+                      {% endif %}
+                      >Video Games
+                    </label>
+                    <br>
+                    <label class="checkbox-inline">
+                      <input type="checkbox" name="books"
+                      {% if user.user_profile.books %}
+                      checked
+                      {% endif %}
+                      >Books
+                    </label>
+                    <br>
+                    <label class="checkbox-inline">
+                      <input type="checkbox" name="music"
+                      {% if user.user_profile.music %}
+                      checked
+                      {% endif %}
+                      >Music
+                    </label>
+                    <br>
+                    <label class="checkbox-inline">
+                      <input type="checkbox" name="sports"
+                      {% if user.user_profile.sports %}
+                      checked
+                      {% endif %}
+                      >Sports
+                    </label>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label" for="textinput">Description</label>
+                    <div class="col-sm-6">
+                      <textarea rows="6" maxlength="450" type="text" name="description" placeholder="Description" value="{{ user.user_profile.description }}" class="form-control"> {{ user.user_profile.description }} </textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <div class="col-sm-offset-4 col-sm-6">
+                      <div class="pull-right">
+                        <button type="submit" class="btn btn-default">Save</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </fieldset>
+              </form>
+            </div><!-- /.col-lg-12 -->
+          </div><!-- /.row -->
+        </div>
+
+
+      {% if anchor == 'true' %}
+        <div class="tab-pane active" id="b">
+      {% else %}
+        <div class="tab-pane" id="b">
+       {% endif %}
+          <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+              <form action="{% url 'edit_account' %}" method="post" class="form-horizontal" role="form">
+               {% csrf_token %}
+               {%  if edit_account.success %}
+               <div id="loginalert"  class="alert alert-success">
+                 <p>Success: {{ edit_account.success }}</p>
+                 <span></span>
+               </div>
+               {%  elif edit_account.error %}
+               <div id="loginalert"  class="alert alert-danger">
+                <p>Error: {{ edit_account.error }}</p>
+                <span></span>
+              </div>
+              {% endif %}
+              <fieldset>
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="textinput">Username</label>
+                  <div class="col-sm-6">
+                    <input type="text" name="username" placeholder="Username" value="{{ user.username }}" class="form-control">
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="textinput">Email</label>
+                  <div class="col-sm-6">
+                    <input type="text" name="email" placeholder="Email" value="{{ user.email }}" class="form-control">
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="textinput">Password</label>
+                  <div class="col-sm-6">
+                    <input type="password" name="password" placeholder="Password" value="" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-sm-4 control-label" for="textinput">Confirm Password</label>
+                  <div class="col-sm-6">
+                    <input type="password" name="password2" placeholder="Confirm Password" value="" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-4 col-sm-6">
+                    <div class="pull-right">
+                      <button type="submit" class="btn btn-default">Save</button>
+                    </div>
+                  </div>
+                </div>
+
+                </fieldset>
+              </form>
+            </div><!-- /.col-lg-12 -->
+          </div><!-- /.row -->
+        </div>
+        <div class="tab-pane" id="c">
+          <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+              <form action="{% url 'upload_pic' %}" method="post" enctype="multipart/form-data" class="form-horizontal" role="form">
+               {% csrf_token %}
+
+              <fieldset>
+                <!-- Text input-->
+                <div class="form-group">
+                  <label class="col-sm-4 control-label">Profile Pic</label>
+                  <div class="col-sm-6">
+                    <input id="pic" type="file" class="" name="pic" class="form-control">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-4 col-sm-6">
+                    <div class="pull-right">
+                      <button type="submit" class="btn btn-default">Save</button>
+                    </div>
+                  </div>
+                </div>
+
+              </fieldset>
+            </form>
+          </div><!-- /.col-lg-12 -->
+        </div><!-- /.row -->
+      </div>
+
+    </div>
+    <!-- /tabs -->
+  </div>
+  </div>
+
+</body>
+</html>

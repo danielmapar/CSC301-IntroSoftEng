@@ -1,0 +1,20 @@
+
+.slideoutmenu {
+  position: absolute;
+  background-color: #000000;
+  color: #ffffff; 
+  left: 0px;
+  height: 100%;
+  width: 150px;
+}
+
+ul {
+  list-style-type: none;
+   padding-left:5px;
+}
+
+.hamburger {
+	height: 75px;
+	width: 100px;
+}
+

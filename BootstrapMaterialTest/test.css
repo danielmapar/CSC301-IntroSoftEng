@@ -1,0 +1,24 @@
+.blue
+{
+    height: 50px;
+    background: #0676ff;
+}
+
+.red
+{
+    height: 50px;
+    background: #ff4840;
+}
+
+.well {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.profile-pic {
+    /* 50% 50% centers image in div */
+    background: url("profile.png") 50% 50% no-repeat; 
+    width: 480px;
+    height: 250px;
+    margin: 0 auto;
+}

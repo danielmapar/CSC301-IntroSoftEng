@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hi</title>
+    <link rel="stylesheet" href="{% static 'bootstrap-3.2.0/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'bootstrap-3.2.0/css/bootstrap-theme.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'font-awesome-4.2.0/css/font-awesome.min.css' %}" type="text/css">
+    <script src="{% static 'jquery-2.1.1/jquery-2.1.1.min.js' %}"></script>
+    <script src="{% static 'bootstrap-3.2.0/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'chatapp/qb/jquery-2.1.1.js' %}"></script>
+    <script src="{% static 'chatapp/qb/quickblox.js' %}"></script>
+    <script src="{% static 'chatapp/qb/config.js' %}"></script>
+    <script>
+
+    var user_username = "{{user.username}}";
+
+    </script>
+    <script src="{% static 'chatapp/qb/app.js' %}"></script>
+
+    <style>
+    #messages
+    {
+        overflow-y: scroll;
+        height: 200px;
+    }
+    </style>
+</head>
+
+<body>
+
+{% include 'chatapp/partials/nav.html' %}
+
+
+<h3 id="title">Hello!</h3>
+
+<div id="text_box">
+    <div>
+        Recipient:
+        <select id="recipient_box"></select>
+    </div>
+    <div>
+        Message: 
+        <input id="message_box" type="text" value="">
+    </div>
+    <button id="send_message_button">Send Message</button>
+</div>
+
+<div id="messages">
+</div>
+
+<h1>{{user.username}} Matches</h1>
+<ul>
+{% for muser, mprof in matches %}
+    <li>{{muser.username}} - {{ muser.first_name }} {{muser.last_name}}</li>
+{% empty %}
+    <li>No Matches yet.</li>
+{% endfor %}
+
+
+
+
+
+
+</body>
+</html>

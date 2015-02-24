@@ -1,0 +1,16 @@
+.blue
+{
+    height: 50px;
+    background: #0676ff;
+}
+
+.red
+{
+    height: 50px;
+    background: #ff4840;
+}
+
+.well {
+    max-width: 500px;
+    margin: 0 auto;
+}

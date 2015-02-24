@@ -1,0 +1,9 @@
+## Jimothy
+Jimothy is a 20 y/o exchange student from a small school Germany, spending a year at the University of Toronto.  Coming from a much smaller university, Jimothy has a hard time adjusting to life on a big campus. While he keeps up with his classes, Jimothy does not have many friends in Toronto, unlike back home.  Jimothy liked to go out a couple times a week in Germany, but now spends all his time doing schoolwork and watching TV alone in his appartment 5 minutes from campus.  Jimothy also likes to workout, but only with a partner.  Jimothy is an amazing painter, but is too insecure in his masculinity to show anyone his work, and so only uses and reuses one canvas that he hides in his closet.  He is the perfect man. [Picture](Jimothy.jpg)
+
+## Johnny 
+Johnny is a second-year student Computer Science student at the University of Toronto.  In his first year he had fun at floor parties in his residence.  However, being a bit introverted, he didn't really make any close friends, and now as a commuter is struggling to find a social life.  Johnny now spends most of his time working on schoolwork and playing video games.  Johnny is single, and spends most of his time alone.  [Picture](Johnny.jpg)
+
+
+## Hannelore
+Hannelore is a first-year commuter student who hasn't decided on a major.  She lives in the westmost part of Mississauga with her parents, so her commute is two hours long, meaning that she has to be really productive.  Because of her long commute, Hannelore has trouble staying downtown late for parties.  Hannelore loves learning new things from other people, and really likes discussing shared experiences with others.  [Picture](Hannelore.jpg)

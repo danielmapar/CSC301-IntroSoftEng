@@ -1,0 +1,47 @@
+{% load static %}
+<div class="row">
+  <div class="col-md-offset-3 col-md-3">
+    <img src="{% static 'chatapp/profilepics/'%}{{user.id}} " class="avatar img-circle" onerror="this.src = '{% static 'images/profile.jpg'%}'">
+    <!--<img src="https://secure.gravatar.com/avatar/de9b11d0f9c0569ba917393ed5e5b3ab?s=140&r=g&d=mm" class="avatar img-circle">-->
+  </div>
+  <div class="col-md-3">
+      <div class="panel">
+        <h3><span class="fa fa-user"></span> {{ user.first_name }} {{ user.last_name }}</h3>
+        <p><span class="info-label">Age:</span> {{ profile.age }}</p>
+        <p><span class="info-label">Gender:</span> {{ profile.gender }}</p>
+        <p><span class="info-label">Year of Study:</span> {{ profile.year_of_study }}</p>
+        <p><span class="info-label">Degree:</span> {{ profile.degree }}</p>
+        <p><span class="info-label">Program:</span> {{ profile.program }}</p>
+        <br>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <div class="panel">
+      <h3><span class="fa fa-search"></span> About Me</h3>
+      <p>{{ profile.description }}</p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-offset-3 col-md-6">
+    <div class="panel">
+      <h3><span class="fa fa-star"></span> Interests</h3>
+      <div class="tab-pane" id="Interests"><span></span>
+        {% if profile.books %}
+          <span class="interest-tag btn btn-info btn-sm">Books</span> 
+        {% endif %}
+        {% if profile.music %}
+          <span class="interest-tag btn btn-info btn-sm">Music</span>
+        {% endif %}
+        {% if profile.video_games %}
+          <span class="interest-tag btn btn-info btn-sm">Video Games</span>
+        {% endif %}
+        {% if profile.sports %}
+          <span class="interest-tag btn btn-info btn-sm">Sports</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

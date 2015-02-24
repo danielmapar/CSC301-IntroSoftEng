@@ -1,0 +1,41 @@
+[25/Nov/2014 15:44:32] ERROR [django.request:212] Internal Server Error: /chatapp/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/django/core/urlresolvers.py", line 340, in urlconf_module
+    return self._urlconf_module
+AttributeError: 'RegexURLResolver' object has no attribute '_urlconf_module'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/django/core/handlers/base.py", line 103, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/django/core/urlresolvers.py", line 319, in resolve
+    for pattern in self.url_patterns:
+  File "/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/django/core/urlresolvers.py", line 347, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/django/core/urlresolvers.py", line 342, in urlconf_module
+    self._urlconf_module = import_module(self.urlconf_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/Users/danielmarchena/Desktop/workspace/CSC301-Project/Proj-Morning-Team11-repo/Project/Project/CSC301_IntroSoftwareEngineering/urls.py", line 17, in <module>
+    url(r'^chatapp/', include('ChatApp.urls')),
+  File "/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/django/conf/urls/__init__.py", line 25, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/Library/Frameworks/Python.framework/Versions/3.4/lib/python3.4/site-packages/django/utils/importlib.py", line 35, in import_module
+    __import__(name)
+  File "/Users/danielmarchena/Desktop/workspace/CSC301-Project/Proj-Morning-Team11-repo/Project/Project/ChatApp/urls.py", line 4, in <module>
+    from ChatApp import views
+  File "/Users/danielmarchena/Desktop/workspace/CSC301-Project/Proj-Morning-Team11-repo/Project/Project/ChatApp/views.py", line 43
+    else if request.POST['password'] != "" and request.POST['password'] != request.POST['password2']:
+          ^
+SyntaxError: invalid syntax
+[25/Nov/2014 15:45:05] WARNING [django.request:146] Not Found: /chatapp/
+[25/Nov/2014 15:47:16] DEBUG [ChatApp.views:337] Finding matches for 7
+[25/Nov/2014 15:47:16] DEBUG [ChatApp.views:338] Pending:
+[25/Nov/2014 15:47:16] DEBUG [ChatApp.views:346] Matches:
+[25/Nov/2014 15:48:28] DEBUG [ChatApp.views:195] PPStep 1
+[25/Nov/2014 15:48:29] DEBUG [ChatApp.views:197] PPStep 2
+[25/Nov/2014 15:48:29] DEBUG [ChatApp.views:199] PPStep 3
+[25/Nov/2014 15:48:29] DEBUG [ChatApp.views:201] PPStep 4
+[25/Nov/2014 15:48:29] DEBUG [ChatApp.views:204] PPStep 5
+[25/Nov/2014 15:48:29] DEBUG [ChatApp.views:207] PPStep 6

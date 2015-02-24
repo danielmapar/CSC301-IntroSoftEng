@@ -1,0 +1,83 @@
+
+.container-fluid{
+    overflow: auto;
+}
+
+#menu{
+    float: left;
+    width: 50px;
+}
+
+#chat{
+    float: right;
+    width: 50px;
+}
+
+.glyphicon-ok-circle{
+    color: #00CC66;
+}
+.glyphicon-remove-circle{
+    color: #FF0033;
+}
+
+#profile{
+    border: 4px solid black;
+    border-radius: 15px;
+    width: 75%;
+    height: 500px;
+    margin: 25% auto 25% auto;
+    padding: auto;
+    overflow: auto;
+}
+
+#profileTop{
+    background-color: black;
+    color: white;
+    border-bottom: 1px solid black;
+    overflow: auto;
+}
+
+.attributes{
+    overflow: auto;
+    width: 75%;
+    margin-top: 10px;
+    font-size: 28px;
+    font-family: futura;
+    text-align: left;
+    <!--border: 1px solid black;-->
+}
+
+#editProfile, #editAttributes{
+    color: white;
+}
+
+#editProfile:hover, #editAttributes:hover{
+    color: #3399FF;
+}
+
+img{
+    width: 20%;
+    border: 2px solid white;
+    margin: 10px 10px 10px 10px;
+    float: left;
+}
+
+#profileBottom{
+}
+
+.tab-content{
+    text-align: left;
+    width: 90%;
+    margin: 10px auto 10px auto;
+    font-size: 18px;
+}
+
+#editInterests{
+    float: right;
+}
+
+#editCourses{
+    float: right;
+}
+
+
